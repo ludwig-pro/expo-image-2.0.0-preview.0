@@ -62,13 +62,27 @@ export function MyImage() {
   }
 
   return (
-    <Image
-      source={image}
-      style={{ width: "100%", height: image.height / 2 }}
-      placeholder={{
-        blurhash:
-          "|mJ89IxuIUayjZWBj[WBof~pofWBofWBjtayf7ayRkWBoej[WBoeWBofWBxtofRkayfQj[WBj[j[Rjj[j[ofayj[j[azfQM{WBfQayofayj[ayfjofoLWBayj[ayj[ayj[ofj[j@j[ayayoeayfQj[ayWCayayj[WVj[ay",
-      }}
-    />
+    <ThemedView style={styles.stepContainer}>
+      <Text>With a blurhash placeholder</Text>;
+      <Image
+        source={image}
+        style={{ width: "100%", height: image.height / 2 }}
+        placeholder={{
+          blurhash:
+            "|mJ89IxuIUayjZWBj[WBof~pofWBofWBjtayf7ayRkWBoej[WBoeWBofWBxtofRkayfQj[WBj[j[Rjj[j[ofayj[j[azfQM{WBfQayofayj[ayfjofoLWBayj[ayj[ayj[ofj[j@j[ayayoeayfQj[ayWCayayj[WVj[ay",
+        }}
+      />
+      <Text>With an image placeholder</Text>
+      <Image
+        source={image}
+        style={{ width: "100%", height: image.height / 2 }}
+        placeholder={require("@/assets/images/partial-react-logo.png")}
+      />
+      <Text>Without placeholder</Text>
+      <Image
+        source={image}
+        style={{ width: "100%", height: image.height / 2 }}
+      />
+    </ThemedView>
   );
 }
